@@ -3,9 +3,9 @@
 function generateMarkdown(data,lic) {
 
       return `
-  # ${lic}
-  
   # ${data.title_project}
+
+  # ${lic}
   
   ## Description
   ${data.Description}
@@ -25,7 +25,6 @@ function generateMarkdown(data,lic) {
   ${data.Usage}
   
   ## License
-  ${lic}
   This project is licensed under the ${data.license} license.
   
   ## Contributing
