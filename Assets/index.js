@@ -5,8 +5,27 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // licence
 
-const licenceUrl = (licenename) =>{
+const licenceUrl = (licenename) => {
 
+    let licence_Url="";
+    switch(licenename){
+        case "MIT":
+        licence_Url = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        break;
+        case "APACHE 2.0":
+        licence_Url = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        break;
+        case "GPL 3.0":
+        licence_Url = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+        break;
+
+        case "BSD 3":
+        licence_Url = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+        break;
+        default:
+            licence_Url="PLease enter the Correct Licenece"
+    }
+    return licence_Url;
 }
 
 
@@ -17,11 +36,7 @@ const questions = [
         message: "What is the title of your project ?",
         name: "title_project"
     },
-    // {
-    //     type:  "input",
-    //     message: "Sections entitled:",
-    //     name: "Sections_entitled"
-    // },
+
     {
         type:  "input",
         message: "Write a short Description.",
@@ -41,7 +56,8 @@ const questions = [
         type:  "list",
         message: "Which License you want to use?",
         name:"license",
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3'],
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3']
+      
     //     choice:[
     //     {"MIT":"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"},
     //     {"APACHE 2.0": "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"},
@@ -73,16 +89,19 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
-
-    fs.writeFile("README.md",data);
-}
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions);
+    inquirer.prompt(questions).then((response)=>{
+        const lic = licenceUrl(response.license);
+        const readmeContent = generateMarkdown(response, lic);
+
+        
+
+    });
 
 }
+
 
 // function call to initialize program
 init();
