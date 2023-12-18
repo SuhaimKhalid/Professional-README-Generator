@@ -1,10 +1,10 @@
 
-  # Professional-Readme-Generator
+  # Professional-README-Generator
 
   # [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
   ## Description
-  This project is to create a readme file by user through using java script.
+  The Professional README Generator is a JavaScript-based project designed to streamline the process of creating README files. Users can easily generate a customized README for their projects by answering a set of questions in the terminal.
   
   ## Table of Contents
   - [Installation](#installation)
@@ -15,19 +15,19 @@
   - [Questions](#questions)
   
   ## Installation
-  You have to intall node js in your pc to install this project.
+  To use the Professional README Generator, ensure that Node.js is installed on your computer.
   
   ## Usage
-  In terminal of vs code you will ask some questions which will be written in your readme file. you have to answers those questions
+  Open your VS Code terminal and run the application to answer a series of questions. Your responses will be used to generate a README file tailored to your project.
   
   ## License
   This project is licensed under the MIT license.
   
   ## Contributing
-  use real word
+  Contribution in this project is all mine.
   
   ## Tests
-  install proper moduls to run this project Like: (inqurier)
+  Before running the project, make sure to install the required modules: npm install inquirer
   
   ## Questions
   For additional questions, you can reach me through:
